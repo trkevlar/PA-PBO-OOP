@@ -35,7 +35,6 @@ public class Pengguna {
         String password = input.nextLine();
         Integer loginResult = login(username, password);
         if (loginResult == 1) { // Admin
-          System.out.println("Login successful as admin2.");
           return 2;
         } else if (loginResult == 2) { // User
           return 3;
@@ -78,15 +77,12 @@ public class Pengguna {
       // System.out.println("Role: " + role);
       // System.out.println("ID: " + id);
       UserSekarang = id;
-      if (role.equals("admin")) {
+      if (role.equals("admin")) { // Admin
         System.out.println("Login successful as admin.");
         return 1;
-      } else if (role.equals("user")) {
+      } else { // User
         System.out.println("Login successful as user.");
         return 2;
-      } else {
-        System.out.println("Unknown role.");
-        return 0;
       }
     } else {
       System.out.println("Invalid username or password.");
@@ -121,6 +117,13 @@ class admin extends Pengguna {
       default:
         System.out.println("Inputan tidak valid");
     }
-    return 1;
+    return 0;
   }
+}
+
+class user extends Pengguna {
+  // @Override
+  // // public Integer Menu(){
+  // // System.out.println("hello world");
+  // // }
 }
