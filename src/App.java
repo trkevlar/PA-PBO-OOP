@@ -6,6 +6,7 @@ public class App {
         Integer userExit = 0;
         Pengguna pengguna = new Pengguna();
         admin admin = new admin();
+        user user = new user();
         do {
             adminExit = 0;
             userExit = 0;
@@ -21,7 +22,7 @@ public class App {
             } else if (done == 3) { // ke menu user
                 while (userExit == 0) {
                     System.out.println("Selamat datang user");
-                    // userExit = user.Menu();
+                    userExit = user.Menu();
                 }
             }
         } while (selesai == false);
