@@ -14,6 +14,13 @@ public class Pengguna {
     passwords.add("admin");
     roles.add("admin");
     ids.add(usernames.size());
+
+    // User default
+    // Untuk testing, bisa dihapus jika tidak diperlukan
+    usernames.add("user");
+    passwords.add("user");
+    roles.add("peminjam");
+    ids.add(usernames.size());
   }
 
   public Integer Menu() {
@@ -42,9 +49,13 @@ public class Pengguna {
           System.out.println("Login failed.");
           break;
         }
-      case
-          "2":
+      case "2":
         System.out.println("Register");
+        System.out.print("Username: ");
+        String username2 = input.nextLine();
+        System.out.print("Password: ");
+        String password2 = input.nextLine();
+        register(username2, password2, "peminjam");
         break;
       case "3":
         System.out.println("Exit");
